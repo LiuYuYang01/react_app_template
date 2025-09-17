@@ -22,7 +22,8 @@ export default tseslint.config([
     rules: {
       ...reactHooks.configs.recommended.rules,
       "@typescript-eslint/no-explicit-any": "off",
-      "no-unused-vars": "off", // 关闭未使用变量的检查
+      "no-unused-vars": ["warn", { "args": "none" }], // 将未使用变量的检查改为提醒，但忽略函数参数
+      "@typescript-eslint/no-unused-vars": ["warn", { "args": "none" }],
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
